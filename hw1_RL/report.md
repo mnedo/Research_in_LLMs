@@ -58,18 +58,19 @@
 Целю экспериментов было отобразить уязвимость такого алгоритма обучения. Главная уязвимость - при диситиляции модель сталкивается с меньшим количеством ситауции и получает генерализацю хуже.
 
 После обучения на всех эпизодах без ограничений, модели удавалось выжить в 90% случаев
-  ![Результаты обучения без ограничений]()
+  ![Результаты обучения без ограничений](https://github.com/mnedo/Research_in_LLMs/blob/56d320f10854d567c2f1bedd265877cbe014b381/hw1_RL/images/ResAll.png)
 
 В целях показать уязвимость неполного покрытия пространства возможных собятий, было приянто решение искуственно ограничить данные в датасете. Не были взяты хвосты распредение параметров среды
 
 Таблица с распределниями
-|   | | |  |
-| :-: | :-: | :-: |  :-: |
-| ![]() | ![]() | ![]() | ![]() |
 
-Результаты обчения с ограмничениями
-|   | | |  |
-| :-: | :-: | :-: |  :-: |
-| ![]() | ![]() | ![]() | ![]() |
+| ![](https://github.com/mnedo/Research_in_LLMs/blob/56d320f10854d567c2f1bedd265877cbe014b381/hw1_RL/images/DistOfPosition.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/56d320f10854d567c2f1bedd265877cbe014b381/hw1_RL/images/DistOfVelocity.png) | 
+| :-: | :-: |
+| ![](https://github.com/mnedo/Research_in_LLMs/blob/56d320f10854d567c2f1bedd265877cbe014b381/hw1_RL/images/DistOfPoleAngle.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/56d320f10854d567c2f1bedd265877cbe014b381/hw1_RL/images/DistOfAngVelocity.png) | 
+
+Результаты обчения с ограничениями
+| ![](https://github.com/mnedo/Research_in_LLMs/blob/56d320f10854d567c2f1bedd265877cbe014b381/hw1_RL/images/ResPos.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/56d320f10854d567c2f1bedd265877cbe014b381/hw1_RL/images/ResVel.png) | 
+| :-: | :-: |
+| ![](https://github.com/mnedo/Research_in_LLMs/blob/56d320f10854d567c2f1bedd265877cbe014b381/hw1_RL/images/ResAng.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/56d320f10854d567c2f1bedd265877cbe014b381/hw1_RL/images/ResAngVel.png) | 
 
 Выводы: ...
