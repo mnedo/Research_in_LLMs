@@ -1,5 +1,5 @@
 ## Исходный код ##
-[Notebook with calculations]()
+[Notebook with calculations](https://github.com/mnedo/Research_in_LLMs/blob/816634d6296af313f6aefb6a4e0f08a75810711e/hw1_RL/calculations.ipynb)
 
 ## Границы экспеирементов ##
 В рамках домашнего задания был поставлен ряд экспериментов с алгоритмами RL в окружении CartPole из gymnasium. Модель должна делать выбор между движениями тележки, не уронив шеста. Каждый эпизод ограничен 500 командами.
@@ -17,7 +17,7 @@
 
 Для начального сравнения каждая из модель начинала учиться с одинаковым seed и просматривала $5000$ эпизизодов, с $learinig \ rate = 10^{-3}$ и $\gamma = 1 - 10^{-2}$:
 
-![Результаты]()
+![Результаты](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/ResPGs.png)
 По резльутатам запуска:
 | RL Алгоритм  | Количество эпизода до плато | Средняя награда за последине 100 эпизодов |
 | :-: | :-: | :-: |
@@ -31,23 +31,23 @@
 ### Также были проведены исследования с изменением гипераметров и добавлением регулярзиации на энтропию ### 
 
 Таблица с результатами добавления энтропии
-| VPG  | PG, b = mean | PG, b = ValueModel | PG, RLOO |
-| :-: | :-: | :-: |  :-: |
-| ![]() | ![]() | ![]() | ![]() |
+| VPG  | PG, b = mean | PG, b = ValueModel | PG-RLOO |
+| :-: | :-: | :-: | :-: |
+| ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/VP_reg.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/PGBM_reg.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/PG_BVF_reg.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/PGBRLOO_reg.png) |
 
 Выводы: ...
 
 Таблица с изменением $learing \ rate$
-| VPG  | PG, b = mean | PG, b = ValueModel | PG, RLOO |
-| :-: | :-: | :-: |  :-: |
-| ![]() | ![]() | ![]() | ![]() |
+| VPG  | PG, b = mean | PG, b = ValueModel |
+| :-: | :-: | :-: | 
+| ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/VPG_lr.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/PGBM_lr.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/PG_BVF_lr.png) | 
 
 Выводы: ...
 
 Таблица с изменением $\gamma$
-| VPG  | PG, b = mean | PG, b = ValueModel | PG, RLOO |
-| :-: | :-: | :-: |  :-: |
-| ![]() | ![]() | ![]() | ![]() |
+| VPG  | PG, b = mean | PG, b = ValueModel |
+| :-: | :-: | :-: |  
+| ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/VPG_gamma.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/PG_BM_gamma.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/PG_GVF_gamma.png) | 
 
 Выводы: ...
 
