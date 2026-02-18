@@ -19,14 +19,14 @@
 
 ![Результаты](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/ResPGs.png)
 По резльутатам запуска:
-| RL Алгоритм  | Количество эпизода до плато | Средняя награда за последине 100 эпизодов |
-| :-: | :-: | :-: |
-| VPG |  |  |
-| PG, b = mean |  |  |
-| PG, b = ValueModel |  |  |
-| PG, RLOO |  |  |
+| RL Алгоритм  | Количество эпизода до плато | 
+| :-: | :-: | 
+| VPG | $-$ |
+| PG, b = mean | $3500$ |
+| PG, b = ValueModel | $2000$ |
+| PG, RLOO | $800$ |
 
-Выводы: ...
+Выводы: обучение на advantage позволяет модели качестевенне учиться, обощая логику получения $s_t -> a_t$. Алгоритм с RLOO оказался с самым сильным, он за меньшее количество шагов выходит на плато и получает среднюю награду больше остальных (почти максимальную).  
 
 ### Также были проведены исследования с изменением гипераметров и добавлением регулярзиации на энтропию ### 
 
@@ -35,21 +35,21 @@
 | :-: | :-: | :-: | :-: |
 | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/VP_reg.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/PGBM_reg.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/PG_BVF_reg.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/PGBRLOO_reg.png) |
 
-Выводы: ...
+Выводы: регуляризация на энтропию может быть полезна в некоторых случаях - для более быстрого опередления полезных действий, однако иногда она может мешать модели выучить распределение или замедлять это процесс.
 
 Таблица с изменением $learing \ rate$
 | VPG  | PG, b = mean | PG, b = ValueModel |
 | :-: | :-: | :-: | 
 | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/VPG_lr.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/PGBM_lr.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/PG_BVF_lr.png) | 
 
-Выводы: ...
+Выводы:  $learinig \ rate = 10^{-3}$ оказался самым стабильным, он позволяет модели обучаться быстро, но при этом он позволяет найти оптмимум и не выскочить из него
 
 Таблица с изменением $\gamma$
 | VPG  | PG, b = mean | PG, b = ValueModel |
 | :-: | :-: | :-: |  
 | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/VPG_gamma.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/PG_BM_gamma.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/b8667e1b88015a77cca4a32b2531e42a6e773b70/hw1_RL/images/PG_GVF_gamma.png) | 
 
-Выводы: ...
+Выводы: $\gamma = 1 - 10^{-2}$ позволяет модели должным образом учитывать последудующие награды, не делая их малыми и одновременно не делая их равнозначными с текущей наградой.
 
 ## BEHAVIOUR CLONING ##
 
@@ -73,4 +73,4 @@
 | :-: | :-: |
 | ![](https://github.com/mnedo/Research_in_LLMs/blob/56d320f10854d567c2f1bedd265877cbe014b381/hw1_RL/images/ResAng.png) | ![](https://github.com/mnedo/Research_in_LLMs/blob/56d320f10854d567c2f1bedd265877cbe014b381/hw1_RL/images/ResAngVel.png) | 
 
-Выводы: ...
+Выводы: если диситилированная модель не сможет ознакомиться с распеределнием, то она показывает результаты кратно хуже эксперта. Непокрытые поля не являются равнозначными - ограничения на Cart Position и тем более на Pole Angular Velocity резко уходшают поведение модели, поскольку выбросы именно в этих параметрах происходят в сложных для модели случаях, когда необходимо удержать шест. Таким образом дистиллированная модель обучается кратно быстрее, но в случаях неполного покрытия распередления входных данных, модель может плохо справляться с задачей генерализации 
