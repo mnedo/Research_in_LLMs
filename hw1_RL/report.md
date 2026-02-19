@@ -12,7 +12,7 @@
 ## Алгоритмы RL ##
 При обучении алгоритма использовались:
 * Vanilla Policy Gradient алгоритм. $loss = -log{\pi (a_t | s_t )} \cdot G_t$
-* Policy Gradient with baseline. $loss = -https://github.com/mnedo/Research_in_LLMs/blob/main/hw1_RL/report.mdlog{\pi (a_t | s_t )} \cdot (G_t- b)$
+* Policy Gradient with baseline. $loss = -log{\pi (a_t | s_t )} \cdot (G_t- b)$
   *  $Baseline = mean(G_t)$
   *  $Baseline = ValueModel(s_t)$
   *  $Baseline = mean(G_i), i \in [1, ..., t-1, t+1, ...]$
